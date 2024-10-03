@@ -1,5 +1,5 @@
-import newsModel from "../model/newsModel"
-import newsView from "../view/newsView";
+import newsModel from "../model/newsModel.js";
+import newsView from "../view/newsView.js";
 
 const newsController = {
 
