@@ -39,7 +39,6 @@ const newsController = {
                 console.error(error);
             } else {
                 totalArticles = data.totalResults;
-                console.log("total articles",totalArticles);
                 
                 totalPages = Math.ceil(totalArticles/pageSize);
                 newsView.renderNews(data);
@@ -67,9 +66,6 @@ const newsController = {
         const nextButton =  document.getElementById('next-btn');
         
         prevButton.disabled = (cureentPage === 1);
-        console.log(cureentPage);
-        console.log(totalPages);
-        
         
         nextButton.disabled = (cureentPage === totalPages);
         
