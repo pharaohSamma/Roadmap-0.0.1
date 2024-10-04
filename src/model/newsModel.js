@@ -2,7 +2,7 @@ const newsModel = {
     fetchNews: function (callback){
         const xhr = new XMLHttpRequest();
         const apiKey = '05e367da39364c7b8c15fa9b968ff4e2';
-        const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apiKey}`;
+        const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-09-04&sortBy=publishedAt&apiKey=${apiKey}`;
 
         xhr.open('GET', url , true);
         xhr.onload = function (){
