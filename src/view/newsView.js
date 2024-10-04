@@ -1,9 +1,9 @@
 const newsView = {
-    renderNews: function (articles){
+    renderNews: function (data){
         const container = document.getElementById('news-container');
         container.innerHTML = ''; //clear content
 
-        articles.forEach(article => {
+        data.articles.forEach(article => {
             const newsItem = document.createElement('div');
             newsItem.classList.add('news-item');
             newsItem.innerHTML = `

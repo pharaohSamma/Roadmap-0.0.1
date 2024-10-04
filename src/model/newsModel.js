@@ -13,7 +13,7 @@ const newsModel = {
         xhr.onload = function (){
             if (xhr.status === 200){
                 const data = JSON.parse(xhr.responseText);
-                callback(null, data.articles);
+                callback(null, data);
             } else {
                 callback('Error fetching data', null)
             }
