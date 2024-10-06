@@ -31,12 +31,10 @@ const newsModel = {
         })
         .then(data =>{
             callback(null,data);
-            console.log('data recieved',data);
             
         })   
         .catch(error =>{
             callback(`Error fetching data`,null)
-            console.error(`there was a problem with fetch`,error)
         })                             
     }
 };

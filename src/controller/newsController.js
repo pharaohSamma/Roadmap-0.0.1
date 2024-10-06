@@ -36,6 +36,7 @@ const newsController = {
     fetchPage: function(page){
         newsModel.fetchNews(page, pageSize, function (error, data) {
             if(error) {
+                alert(error);
                 console.error(error);
             } else {
                 totalArticles = data.totalResults;
