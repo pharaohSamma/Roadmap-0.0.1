@@ -6,19 +6,38 @@ const newsModel = {
         // const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-09-04&sortBy=publishedAt&apiKey=${apiKey}`;
 
         //assigment A2
-        const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&sortBy=publishedAt&page=${page}
-                                        &pageSize=${pageSize}&apiKey=${apiKey}`;
+        // const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&sortBy=publishedAt&page=${page}
+        //                                 &pageSize=${pageSize}&apiKey=${apiKey}`;
 
-        xhr.open('GET', url , true);
-        xhr.onload = function (){
-            if (xhr.status === 200){
-                const data = JSON.parse(xhr.responseText);
-                callback(null, data);
-            } else {
-                callback('Error fetching data', null)
-            }
-        };
-        xhr.send();
+        // xhr.open('GET', url , true);
+        // xhr.onload = function (){
+        //     if (xhr.status === 200){
+        //         const data = JSON.parse(xhr.responseText);
+        //         callback(null, data);
+        //     } else {
+        //         callback('Error fetching data', null)
+        //     }
+        // };
+        // xhr.send();
+
+
+        // A2 spi eith fetch()
+
+        fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&sortBy=publishedAt&page=${page}
+                                        &pageSize=${pageSize}&apiKey=${apiKey}`)
+        .then(response =>{
+            if(!response.ok){throw new Error('Network error was not okay')}
+            return response.json();
+        })
+        .then(data =>{
+            callback(null,data);
+            console.log('data recieved',data);
+            
+        })   
+        .catch(error =>{
+            callback(`Error fetching data`,null)
+            console.error(`there was a problem with fetch`,error)
+        })                             
     }
 };
 
