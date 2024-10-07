@@ -81,6 +81,11 @@ li a {
   text-decoration: underline;
 }
 
+#errorMessage{
+  display: flex;
+  justify-content: center;
+  color: red;
+}
 #pagination-btn{
   display: flex;
   justify-content: space-evenly;

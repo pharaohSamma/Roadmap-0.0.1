@@ -36,9 +36,12 @@ const newsController = {
     fetchPage: function(page){
         newsModel.fetchNews(page, pageSize, function (error, data) {
             if(error) {
-                alert(error);
+                document.getElementById('errorMessage').style.visibility = "";
+                document.getElementById('pagination-btn').style.visibility = "hidden";
                 console.error(error);
             } else {
+                document.getElementById('errorMessage').style.visibility = "hidden";
+                document.getElementById('pagination-btn').style.visibility = "";
                 totalArticles = data.totalResults;
                 
                 totalPages = Math.ceil(totalArticles/pageSize);
