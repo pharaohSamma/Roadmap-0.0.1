@@ -1,8 +1,8 @@
 import newsModel from "../model/newsModel.js";
 import newsView from "../view/newsView.js";
 
-let cureentPage = 1;
-let pageSize = 8;
+let currentPage = 1;
+const pageSize = 8;
 let totalArticles = 0;
 let totalPages = 0;
 const newsController = {
@@ -18,7 +18,7 @@ const newsController = {
         // });
 
         //Assigment A2
-        this.fetchPage(cureentPage);
+        this.fetchPage(currentPage);
         this.updateButtonState();
         
         const nextButton =  document.getElementById('next-btn');
@@ -51,16 +51,16 @@ const newsController = {
     },
 
     handleNextClick: function () {
-        cureentPage++;
-        this.fetchPage(cureentPage);
+        currentPage++;
+        this.fetchPage(currentPage);
         this.updateButtonState();
     },
 
     // Handle the "Previous" button click
     handlePrevClick: function () {
-        if (cureentPage > 1) {
-            cureentPage--;
-            this.fetchPage(cureentPage);
+        if (currentPage > 1) {
+            currentPage--;
+            this.fetchPage(currentPage);
         };
         this.updateButtonState();
     },
@@ -69,9 +69,9 @@ const newsController = {
         const prevButton = document.getElementById('prev-btn');
         const nextButton =  document.getElementById('next-btn');
         
-        prevButton.disabled = (cureentPage === 1);
+        prevButton.disabled = (currentPage === 1);
         
-        nextButton.disabled = (cureentPage === totalPages);
+        nextButton.disabled = (currentPage === totalPages);
         
     }
 };

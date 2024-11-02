@@ -31,7 +31,6 @@ const newsModel = {
         })
         .then(data =>{
             callback(null,data);
-            
         })   
         .catch(error =>{
             callback(`Error fetching data`,null)
